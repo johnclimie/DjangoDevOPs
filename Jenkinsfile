@@ -30,5 +30,6 @@ pipeline {
         docker push 451947743265.dkr.ecr.us-east-2.amazonaws.com/test:django
         '''
       }
+    }
   }    
 }
