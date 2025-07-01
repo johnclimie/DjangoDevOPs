@@ -10,8 +10,7 @@ pipeline {
       steps{
         withAWS(region: 'ap-south-1', credentials: 'aws-creds'){
           powershell '''
-          $password = aws ecr get-login-password --region ap-south-1
-          docker login --username AWS --password-stdin $password 451947743265.dkr.ecr.us-east-2.amazonaws.com
+          aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 451947743265.dkr.ecr.us-east-2.amazonaws.com
           '''
         }
       }
